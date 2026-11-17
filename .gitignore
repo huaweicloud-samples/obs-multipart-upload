@@ -1,0 +1,29 @@
+# Terraform
+.terraform/
+.terraform.lock.hcl
+*.tfstate
+*.tfstate.*
+*.tfplan
+crash.log
+crash.*.log
+
+# 本地变量与凭据（切勿提交）
+*.tfvars
+*.tfvars.json
+!*.tfvars.example
+.env
+.env.*
+!.env.example
+
+# 运行产物
+verify-result.json
+verification-result.json
+static-check-result.json
+last-event.json
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# 注意：build/ 与 dist/ 是 Terraform 的输入（fileset/file 读取资产清单），
+# 因此不要加入忽略列表，否则 apply 会因缺少构建产物而失败。
+node_modules/
